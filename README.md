@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧬 cfDNA Mutation Mapper
 
-## Getting Started
+**cfDNA Mutation Mapper** is an interactive bioinformatics tool that visualizes and annotates mutations found in circulating tumor DNA (cfDNA), mapping them to 3D protein structures using real biological data. This app demonstrates your ability to combine biomedical insight with modern web and data tools for real-world bioinformatics and clinical research use cases.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Frontend:** Next.js 14 (App Router, Turbopack, TypeScript)
+- **3D Visualization:** NGL Viewer or Mol* (integrated in React)
+- **Backend:** Flask (Python microservice for parsing and annotation)
+- **Deployment:** Vercel (frontend) + Render/Fly.io (backend)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Core Features
 
-## Learn More
+- 🔬 Upload `.vcf`, `.tsv`, or `.maf` files with cfDNA mutations
+- 🧠 Annotate mutations using Ensembl VEP, ClinVar, and COSMIC APIs
+- 🧬 Map mutations to known PDB protein structures via UniProt & RCSB
+- 🧫 Visualize affected residues in 3D with domain annotations
+- 🖥️ Modern UI with file upload, dynamic feedback, and mutation insights
+- 🔗 Cleanly separated Flask backend for bioinformatics processing
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+	4.	Access at http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⸻
 
-## Deploy on Vercel
+🧪 Sample Workflow
+	1.	Upload a .vcf file (containing cfDNA mutations)
+	2.	The app:
+	•	Parses file in Flask
+	•	Maps genes and amino acid changes to PDB structures
+	•	Annotates using VEP, COSMIC, ClinVar
+	3.	Frontend renders:
+	•	Mutation metadata
+	•	Protein structure with highlighted residue
+	•	Pathogenicity and recurrence info
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+⸻
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📊 Data Sources Used
+	•	RCSB PDB
+	•	Ensembl VEP
+	•	ClinVar
+	•	COSMIC
+	•	UniProt
+
+⸻
+
+🔒 Security & Privacy
+	•	Uploaded files are processed in-memory and never stored permanently
+	•	No patient identifiers are logged
+	•	CORS policy configured for cross-domain frontend/backend communication
+
+⸻
+
+💡 Use Cases
+	•	🧬 Research labs needing structural mutation context
+	•	🧪 Educational tools for genomics and structural biology
+	•	🧠 Clinical interpretation of cfDNA mutation relevance
+
+⸻
+
+🧑‍💻 For Developers
+	•	Add more data sources (e.g. AlphaFold, gnomAD)
+	•	Add multi-mutation support and clustering
+	•	Add PDF/PNG export of 3D visualizations
+	•	Integrate authentication if needed (Clerk/Auth0)
+
+⸻
+
+📜 License
+
+MIT License — feel free to fork and build upon this for non-commercial research and education.
+
+⸻
+
+👤 Author
+
+Built with ❤️ by [Sage White]
